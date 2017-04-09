@@ -16,6 +16,7 @@ ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 wget https://github.com/taeseunglee/taeseung_vimrc/archive/master.zip
 ```
 
+## Features
 ### Leader Key
 The Leader key is now bound to `Space`
 
