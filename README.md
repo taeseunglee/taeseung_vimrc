@@ -1,22 +1,12 @@
 # taeseung_vimrc
 
-This Vim configuration is meant to make Vim feel more like an IDE than a simple
-console-based text editor.
-I use it mostly under with MacVIM and Linux GVim though I occasionally run it
-directly in a terminal.
-
 ## Installation
 
 ### Clone with GIT
 
-Run these commands to get this Vim configuration working on your OS X or Linux
-machine.
-You can run `git pull` inside of `~/.vim` if you'd ever like to grab the latest
-version.
-
 ```bash
 cd ~/
-git clone git://github.com/taeseunglee/vimrc.git .vim
+git clone git://github.com/taeseunglee/taeseung_vimrc.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 ```
 
@@ -26,7 +16,7 @@ This method might be more sane. Simply downlaod the latest version, extract
 to `~/.vim`, and configure to your liking.
 
 ```bash
-wget https://github.com/tlhunter/vimrc/archive/master.zip
+wget https://github.com/taeseunglee/taeseung_vimrc/archive/master.zip
 ```
 
 ## Features
@@ -39,42 +29,31 @@ wget https://github.com/tlhunter/vimrc/archive/master.zip
 * Quickly navigate to files using a fuzzy finder
 
 ### Leader Key
-As of `v0.2.0`, the Leader key is now bound to `Space` (used to be
-    `Comma`)
+The Leader key is now bound to `Space`
 
 ### Switching between files (Buffers)
 
-* Use `<Leader>q` to close the current file (a different file will appear in its
-    place)
 * Use `Ctrl h` `Ctrl l` to move between open files
 * `Ctrl Left` `Ctrl Right` also works for switching between files
-* While in MacVIM, you can swipe left and right to switch between open
-        files
-* Use `Cmd Shift N` (or `Alt n` in Linux GVim) to open a new empty
-              buffer
+
+### Code Fold (Informations about folding commands)
+
+* zi : switch folding on or off
+* za : toggle current fold open/closed
+* zc : close current fold
+* zr : decrease the `foldlevel`
+* zR : open all folds
+* zm : increase the `foldlevel`
+* zM : close all folds
+* zv : expand folds to reveal cursor
 
 ### Viewports (Windows/Splits)
 
-* Use `<Leader>h` `<Leader>j` `<Leader>k` `<Leader>l` to navigate between
-    viewports
-* Use `<Leader>Q` to close the current window (you probably won't ever
-        need to do this)
-* Use `<Leader>n` to toggle the file browser
-* Use `Ctrl P` to perform a recursive fuzzy filename search
-* Use `<Leader>a` and type a phrase to search to search based on content within your files (quote and escape if needed)
-* Use `<Leader>A` to close the open ack search results at the bottom of the screen
+* Use `<Leader>h` `<Leader>j` `<Leader>k` `<Leader>l` to navigate between viewports
 
 ### File Browser (NERDTree)
 
-* Use `<Leader>n` to toggle the file browser
-* Use standard movement keys to move around
-* Use `Ctrl j` and `Ctrl k` to move between siblings (aka skip over children in expanded folders)
-* Use `C` to make the highlighted node the current working directory
-* Use `:Bookmark BookmarkName` to bookmark the current selection
-* Use `B` to toggle the bookmark menu
-* Use `?` if you'd like some NERDTree documentation
-* Use `o` to open the selected file in a new buffer
-* Use `t` to open the selected file in a new tab
+* Use `<C-n>` to toggle the file browser
 
 ### Themes (ColorSchemes)
 

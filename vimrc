@@ -1,12 +1,20 @@
 call pathogen#infect()
 set nocompatible
+let mapleader = "\<Space>"
 
 filetype plugin indent on
 
 colorscheme 256-grayvim
 set mouse=a
 
-set foldmethod=marker
+" ------  Fold Options  ------
+set foldmethod=syntax
+set foldnestmax=100
+set nofoldenable
+set foldlevel=0
+
+
+
 set history=1000
 
 " ------  Charset Init  ------
@@ -41,7 +49,7 @@ set incsearch
 
 set nobackup
 set tags=tags
-set digraph
+" set digraph " enable me to write special characters.
 set showmatch
 
 
