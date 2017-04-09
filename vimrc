@@ -3,7 +3,7 @@ set nocompatible
 
 filetype plugin indent on
 
-colorscheme Mustang
+colorscheme 256-grayvim
 set mouse=a
 
 set foldmethod=marker
