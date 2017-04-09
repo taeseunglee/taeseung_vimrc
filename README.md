@@ -12,21 +12,9 @@ ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
 
 ### One Time Download
 
-This method might be more sane. Simply downlaod the latest version, extract
-to `~/.vim`, and configure to your liking.
-
 ```bash
 wget https://github.com/taeseunglee/taeseung_vimrc/archive/master.zip
 ```
-
-## Features
-
-* Edit many files at the same time
-* File Browser on left side of screen
-* Move between files in center screen
-* View status of the current GIT repo, if applicable
-* Additional features when running under MacVIM
-* Quickly navigate to files using a fuzzy finder
 
 ### Leader Key
 The Leader key is now bound to `Space`
