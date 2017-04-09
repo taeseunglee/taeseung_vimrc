@@ -4,7 +4,8 @@ let mapleader = "\<Space>"
 
 filetype plugin indent on
 
-colorscheme 256-grayvim
+set t_Co=256
+colorscheme Mustang
 set mouse=a
 
 " ------  Fold Options  ------
