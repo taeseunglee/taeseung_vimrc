@@ -13,12 +13,6 @@ git submodule update --init
 cd ~/
 ```
 
-### One Time Download
-
-```bash
-wget https://github.com/taeseunglee/taeseung_vimrc/archive/master.zip
-```
-
 ## Features
 ### Leader Key
 The Leader key is now bound to `Space`
