@@ -69,6 +69,12 @@ nnoremap <Leader>l <C-w>l
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 
+nnoremap <Leader><Left> <C-w>h
+nnoremap <Leader><Right> <C-w>l
+nnoremap <Leader><Up> <C-w>j
+nnoremap <Leader><Down> <C-w>k
+
+
 
 " -------  Bundle options  ------
 " For airline
@@ -88,7 +94,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
