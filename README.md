@@ -7,7 +7,7 @@
 ```bash
 cd ~/
 git clone git://github.com/taeseunglee/taeseung_vimrc.git .vim
-ln -s ~/.vim/vimrc ~/.vimrc # Optional, needed for some VIM installations
+ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim/
 git submodule update --init
 cd ~/
