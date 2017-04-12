@@ -1,5 +1,3 @@
-" call pathogen#infect()
-"
 " ------  Vundle Setting  ------
 set nocompatible " Required
 
@@ -16,7 +14,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'plasticboy/vim-markdown'
-
 
 " Required, plugins available after.
 call vundle#end()
