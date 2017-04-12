@@ -9,6 +9,7 @@ cd ~/
 git clone git://github.com/taeseunglee/taeseung_vimrc.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim/
+mkdir bundle
 git submodule update --init
 cd ~/
 ```
