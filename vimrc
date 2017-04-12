@@ -1,22 +1,38 @@
-call pathogen#infect()
-set nocompatible
-let mapleader = "\<Space>"
+" call pathogen#infect()
+"
+" ------  Vundle Setting  ------
+set nocompatible " Required
 
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'vim-scripts/L9'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'Townk/vim-autoclose'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'plasticboy/vim-markdown'
+
+
+" Required, plugins available after.
+call vundle#end()
 filetype plugin indent on
 
+
+let mapleader = "\<Space>" " <Leader> means 'Space'
+" ------  Color Options  ------
 set t_Co=256
 colorscheme Mustang
-set mouse=a
 
 " ------  Fold Options  ------
 set foldmethod=syntax
 set foldnestmax=100
 set nofoldenable
 set foldlevel=0
-
-
-
-set history=1000
 
 " ------  Charset Init  ------
 scriptencoding utf-8
@@ -40,12 +56,15 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 
-"------  Searching  ------
+" ------  Searching Options  ------
 set hlsearch
 set smartcase
 set ignorecase
 set incsearch
 
+" -------  Unclassified Options  ------
+set mouse=a
+set history=1000
 
 
 set nobackup
