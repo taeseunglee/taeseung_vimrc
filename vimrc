@@ -74,7 +74,10 @@ set incsearch
 " -------  Unclassified Options  ------
 set mouse=a
 set history=1000
-
+set splitright
+set splitbelow
+" :sp filename    for a horizontal split
+" :vs filename    for a vertical split
 
 set nobackup
 set tags=tags
@@ -128,36 +131,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " For gitgutter
-let g:gitgutter_max_signs = 500  " default value
-
-
-
-
-
-
-" ------  Function Mapping  ------
-map<F2> :w <CR> :! gcc % && time ./a.out < test <CR>
-map<F3> :w <CR> :! gcc % && time ./a.out <CR>
-map<F4> :w <CR> :! gcc - g - lm -Wall -03 % && time ./a.out <CR>
-map<F6> :w <CR> :! make && ./a.out <CR>
-map<F7> :w <CR> :! g++ -g -lm -Wall % && time ./a.out <CR>
-map<F8> :w <CR> :! g++ -g -lm -Wall % && time ./a.out < test <CR>
-map<F9> :w <CR> :!python % <CR>
-map tn :tabnew <CR>
-map tq :q! <CR>
-map <C-n> :NERDTreeToggle<CR>
-
-"autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-"let g:NERDTreeDirArrows = 1
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
-
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
-
+let g:gitgutter_max_signs = 300  " default value
 
