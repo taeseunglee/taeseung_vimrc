@@ -102,8 +102,8 @@ nnoremap <Leader>k <C-w>k
 
 nnoremap <Leader><Left> <C-w>h
 nnoremap <Leader><Right> <C-w>l
-nnoremap <Leader><Up> <C-w>j
-nnoremap <Leader><Down> <C-w>k
+nnoremap <Leader><Down> <C-w>j
+nnoremap <Leader><Up> <C-w>k
 
 
 
