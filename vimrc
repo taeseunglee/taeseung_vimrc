@@ -31,6 +31,14 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 
 
+" GNU Coding Standards: https://gcc.gnu.org/wiki/FormattingCodeForGCC
+setlocal cindent
+setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal textwidth=79
+setlocal fo-=ro fo+=cql
+setlocal autoindent
 
 let mapleader = "\<Space>" " <Leader> means 'Space'
 " ------  Color Options  ------
