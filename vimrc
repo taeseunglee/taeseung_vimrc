@@ -43,7 +43,7 @@ setlocal autoindent
 let mapleader = "\<Space>" " <Leader> means 'Space'
 " ------  Color Options  ------
 set t_Co=256
-colorscheme Mustang
+colorscheme diablo3
 
 " ------  Fold Options  ------
 set foldmethod=syntax
