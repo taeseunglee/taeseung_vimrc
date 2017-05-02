@@ -4,12 +4,20 @@
 
 ### Clone with GIT
 
+#### Default version
 ```bash
 cd ~/
 git clone git://github.com/taeseunglee/taeseung_vimrc.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc
-cd ~/
 ```
+
+#### GNU-c style version
+```bash
+cd ~/
+git clone -b gnu-c git://github.com/taeseunglee/taeseung_vimrc.git .vim
+ln -s ~/.vim/vimrc ~/.vimrc
+```
+
 
 ## Features
 ### Leader Key
