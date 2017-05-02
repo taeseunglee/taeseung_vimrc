@@ -131,5 +131,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " For gitgutter
-let g:gitgutter_max_signs = 300  " default value
+let g:gitgutter_max_signs = 500  " default value
 
