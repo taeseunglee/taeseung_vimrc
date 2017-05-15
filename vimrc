@@ -1,26 +1,25 @@
 " ------  Vundle Setting  ------
 set nocompatible " Required
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'vim-scripts/L9'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'Townk/vim-autoclose'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'plasticboy/vim-markdown'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'vim-scripts/L9'
+Plug 'scrooloose/nerdcommenter'
 
-" Required, plugins available after.
-call vundle#end()
-filetype plugin indent on
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'Townk/vim-autoclose'
+Plug 'airblade/vim-gitgutter'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+" Initialize plugin system
+call plug#end()
+
+" TODO: FIX Breif help!
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -28,7 +27,7 @@ filetype plugin indent on
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Put your non-Plug stuff after this line
 
 
 
@@ -121,7 +120,9 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+" TODO: Find a way to toggle auto_loc_list
 " For syntastic
+let g:statline_syntastic = 0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
