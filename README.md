@@ -30,14 +30,17 @@ The Leader key is now bound to `Space`
 
 ### Code Fold (Informations about folding commands)
 
-* zi : switch folding on or off
-* za : toggle current fold open/closed
-* zc : close current fold
-* zr : decrease the `foldlevel`
-* zR : open all folds
-* zm : increase the `foldlevel`
-* zM : close all folds
-* zv : expand folds to reveal cursor
+
+| Command | Description                     |
+| ------- | ------------------------------- |
+| zi      | switch folding on or off        |
+| za      | toggle current fold open/closed |
+| zc      | close current fold              |
+| zr      | decrease the `foldlevel`        |
+| zR      | open all folds                  |
+| zm      | increase the `foldlevel`        |
+| zM      | close all folds                 |
+| zv      | expand folds to reveal cursor   |
 
 ### Viewports (Windows/Splits)
 
