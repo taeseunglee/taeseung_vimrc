@@ -28,6 +28,20 @@ The Leader key is now bound to `Space`
 * Use `Ctrl h` `Ctrl l` to move between open files
 * `Ctrl Left` `Ctrl Right` also works for switching between files
 
+
+### Plug Command
+
+| Command                             | Description                                                        |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `PlugInstall [name ...] [#threads]` | Install plugins                                                    |
+| `PlugUpdate [name ...] [#threads]`  | Install or update plugins                                          |
+| `PlugClean[!]`                      | Remove unused directories (bang version will clean without prompt) |
+| `PlugUpgrade`                       | Upgrade vim-plug itself                                            |
+| `PlugStatus`                        | Check the status of plugins                                        |
+| `PlugDiff`                          | Examine changes from the previous update and the pending changes   |
+| `PlugSnapshot[!] [output path]`     | Generate script for restoring the current snapshot of the plugins  |
+
+
 ### Code Fold (Informations about folding commands)
 
 
@@ -54,4 +68,4 @@ The Leader key is now bound to `Space`
 
 There is a very large collection of colorschemes in this repository.
 Many of them can be seen [here](http://vimcolors.com/).
-Set the scheme using `:colorscheme NAME`.
+Set the colorscheme using `:colorscheme NAME`.
