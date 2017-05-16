@@ -123,7 +123,8 @@ let g:syntastic_mode_map = {
     \ "mode": "passive",
     \ "active_filetypes": ["c", "cpp"], 
     \ "passive_filetypes": [] }
-" If you want to toggle the Syntastic Mode, active->passive or passive->active,
+" If you want to toggle the Syntastic Mode,
+" i.e. change active to passive mode or passive to active mode,
 " press ctrl+y
 noremap <silent> <C-y> <E:SyntasticToggleMode<CR>
 

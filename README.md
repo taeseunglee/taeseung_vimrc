@@ -21,13 +21,37 @@ ln -s ~/.vim/vimrc ~/.vimrc
 
 ## Features
 ### Leader Key
-The Leader key is now bound to `Space`
+The Leader key is bound to `Space`
 
 ### Switching between files (Buffers)
 
 * Use `Ctrl h` `Ctrl l` to move between open files
 * `Ctrl Left` `Ctrl Right` also works for switching between files
 
+
+### Syntastic (Syntax check)
+#### Syntastic Mode Map
+Currently, syntastic is a passive mode except c or cpp files.
+If you want to apply syntastic to another languages,
+you append languages to active_filetypes in vimrc. For example,
+``` vim
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["c", "cpp", "perl"],
+    \ "passive_filetypes": [] }
+```
+or remove followed lines(just for applying a default syntastic mode)
+``` vim
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["c", "cpp"], 
+    \ "passive_filetypes": [] }
+```
+
+#### Toggle Syntastic Mode
+If you want to toggle the Syntastic Mode, 
+i.e. you want to change active to passive mode or passive to active mode,  
+press ctrl+y
 
 ### Plug Command
 
@@ -43,7 +67,6 @@ The Leader key is now bound to `Space`
 
 
 ### Code Fold (Informations about folding commands)
-
 
 | Command | Description                     |
 | ------- | ------------------------------- |
