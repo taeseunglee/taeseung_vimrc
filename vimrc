@@ -19,17 +19,6 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Initialize plugin system
 call plug#end()
 
-" TODO: FIX Breif help!
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plug stuff after this line
-
-
 
 let mapleader = "\<Space>" " <Leader> means 'Space'
 " ------  Color Options  ------
@@ -120,7 +109,6 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" TODO: Find a way to toggle auto_loc_list
 " For syntastic
 let g:statline_syntastic = 0
 set statusline+=%#warningmsg#
@@ -130,6 +118,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" enable syntastic only for c and cpp
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["c", "cpp"], 
+    \ "passive_filetypes": [] }
+" If you want to toggle the Syntastic Mode, active->passive or passive->active,
+" press ctrl+y
+noremap <silent> <C-y> <E:SyntasticToggleMode<CR>
 
 " For gitgutter
 let g:gitgutter_max_signs = 500  " default value
