@@ -19,15 +19,6 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Initialize plugin system
 call plug#end()
 
-" GNU Coding Standards: https://gcc.gnu.org/wiki/FormattingCodeForGCC
-setlocal cindent
-setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal textwidth=79
-setlocal fo-=ro fo+=cql
-setlocal autoindent
-
 let mapleader = "\<Space>" " <Leader> means 'Space'
 " ------  Color Options  ------
 set t_Co=256
@@ -79,6 +70,16 @@ set nobackup
 set tags=tags
 " set digraph " enable me to write special characters.
 set showmatch
+
+" ------  GNU Coding Standards  ------
+" https://gcc.gnu.org/wiki/FormattingCodeForGCC
+setlocal cindent
+setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal textwidth=79
+setlocal fo-=ro fo+=cql
+setlocal autoindent
 
 
 " ------   Buffer Navigation ------
