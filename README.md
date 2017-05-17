@@ -1,14 +1,13 @@
 # taeseung_vimrc
 
 ## Installation
-
 ### Clone with GIT
-
 #### Default version
 ```bash
 cd ~/
 git clone git://github.com/taeseunglee/taeseung_vimrc.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc
+vim -c ":PlugInstall" -c ":q" -c ":q"
 ```
 
 #### GNU-c style version
@@ -16,6 +15,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/
 git clone -b gnu-c git://github.com/taeseunglee/taeseung_vimrc.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc
+vim -c ":PlugInstall" -c ":q" -c ":q"
 ```
 
 
