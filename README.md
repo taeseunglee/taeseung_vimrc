@@ -31,25 +31,20 @@ The Leader key is bound to `Space`
 
 ### Syntastic (Syntax check)
 #### Syntastic Mode Map
-Currently, syntastic is a passive mode except c or cpp files.
-If you want to apply syntastic to another languages,
-you append languages to active_filetypes in vimrc. For example,
+Currently, syntastic is passive mode for all files.
+If you want to apply syntastic to some languages from the beginning of vim,
+you add languages to active_filetypes in vimrc. For example,
 ``` vim
 let g:syntastic_mode_map = {
     \ "mode": "passive",
     \ "active_filetypes": ["c", "cpp", "perl"],
     \ "passive_filetypes": [] }
 ```
-or remove followed lines(just for applying a default syntastic mode)
-``` vim
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": ["c", "cpp"], 
-    \ "passive_filetypes": [] }
-```
 
 #### Toggle Syntastic Mode
-If you want to toggle the Syntastic Mode, 
+Currently, syntastic is passive mode. So if you want to use syntastic, you must
+toggle the Syntastic Mode(:SyntasticToggleMode).  
+If you want to toggle the Syntastic Mode,
 i.e. you want to change active to passive mode or passive to active mode,  
 press ctrl+y
 

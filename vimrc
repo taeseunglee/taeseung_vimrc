@@ -19,7 +19,6 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Initialize plugin system
 call plug#end()
 
-
 let mapleader = "\<Space>" " <Leader> means 'Space'
 " ------  Color Options  ------
 set t_Co=256
@@ -118,15 +117,19 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" enable syntastic only for c and cpp
 let g:syntastic_mode_map = {
     \ "mode": "passive",
-    \ "active_filetypes": ["c", "cpp"], 
+    \ "active_filetypes": [],
     \ "passive_filetypes": [] }
+" Set Syntastic checkers
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_c_checkers = ['gcc']
+" If you want to add c compiler options, add options as string type
+" let g:syntastic_c_compiler_options = "-std=gnu99"
 " If you want to toggle the Syntastic Mode,
 " i.e. change active to passive mode or passive to active mode,
 " press ctrl+y
-noremap <silent> <C-y> <E:SyntasticToggleMode<CR>
+noremap <silent> <C-y> :SyntasticToggleMode<CR>
 
 " For gitgutter
 let g:gitgutter_max_signs = 500  " default value
