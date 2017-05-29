@@ -124,12 +124,13 @@ let g:syntastic_mode_map = {
 " Set Syntastic checkers
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_c_checkers = ['gcc']
-" If you want to add c compiler options, add options as string type
-" let g:syntastic_c_compiler_options = "-std=gnu99"
+noremap <silent> <C-y> :SyntasticToggleMode<CR>
+
 " If you want to toggle the Syntastic Mode,
 " i.e. change active to passive mode or passive to active mode,
 " press ctrl+y
-noremap <silent> <C-y> :SyntasticToggleMode<CR>
+" If you want to add c compiler options, add options as string type
+" For exmaple, let g:syntastic_c_compiler_options = "-std=gnu99"
 
 " For gitgutter
 let g:gitgutter_max_signs = 500  " default value
