@@ -24,6 +24,15 @@ let mapleader = "\<Space>" " <Leader> means 'Space'
 set t_Co=256
 colorscheme diablo3
 
+syntax enable
+if &term =~ '256color'
+    set term=screen-256color
+    set t_ut=
+
+    set background=dark
+    colorscheme monokai
+endif
+
 " ------  Fold Options  ------
 set foldmethod=syntax
 set foldnestmax=100
