@@ -4,17 +4,17 @@ set nocompatible " Required
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-scripts/L9'
-Plug 'scrooloose/nerdcommenter'
 
 " On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'vim-syntastic/syntastic'
-Plug 'vim-airline/vim-airline'
-Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/ListToggle'
+ " Automatically resizes vim windows (splits) when you switch to another window.
+Plug 'kovetskiy/vim-autoresize'
 
 " Initialize plugin system
 call plug#end()
@@ -42,7 +42,6 @@ set linebreak
 set nolist
 set textwidth=80
 set ruler
-set number
 
 " ------  Indent Options  -----
 set cindent
@@ -81,7 +80,7 @@ noremap <silent> <C-l> :bnext<CR>
 
 
 "------  Window Navigation  ------
-"" <Leader>hljk = Move between windows
+" <Leader>hljk = Move between windows
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader>j <C-w>j
@@ -92,9 +91,10 @@ nnoremap <Leader><Right> <C-w>l
 nnoremap <Leader><Down> <C-w>j
 nnoremap <Leader><Up> <C-w>k
 
-
-
 " -------  Bundle options  ------
+" For gitgutter
+let g:gitgutter_max_signs = 500  " default value
+
 " For airline
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
@@ -108,30 +108,50 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" For syntastic
-let g:statline_syntastic = 0
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": [] }
-" Set Syntastic checkers
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_c_checkers = ['gcc']
-noremap <silent> <C-y> :SyntasticToggleMode<CR>
+" For YouCompleteMe options
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_show_diagnostics_ui = 1 
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 1 
+let g:ycm_always_populate_location_list = 1 "default 0
+let g:ycm_open_loclist_on_ycm_diags = 1 
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
-" If you want to toggle the Syntastic Mode,
-" i.e. change active to passive mode or passive to active mode,
-" press ctrl+y
-" If you want to add c compiler options, add options as string type
-" For exmaple, let g:syntastic_c_compiler_options = "-std=gnu99"
+let g:ycm_complete_in_strings = 1 
+let g:ycm_collect_identifiers_from_tags_files = 0 
+let g:ycm_path_to_python_interpreter = ''
 
-" For gitgutter
-let g:gitgutter_max_signs = 500  " default value
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 
+let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
+let g:ycm_server_log_level = 'info' "default info
+
+let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
+
+" For ycm Symbol Setting
+let g:ycm_error_symbol = "✗"
+let g:ycm_warning_symbol = "⚠"
+
+" highlight YcmErrorLine 
+" highlight YcmWarningLine 
+highligh YcmErrorSection term=reverse cterm=bold ctermfg=232 ctermbg=160 gui=bold guifg=#000000 guibg=#990000
+highligh YcmWarningSection term=reverse cterm=bold ctermfg=232 ctermbg=166 gui=bold guifg=#000000 guibg=#df5f00
+
+" For ListToggle
+let g:lt_location_list_toggle_map = '<leader>t'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+
+" Close quickfix-list and location-list when a file is closed
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
+            \   q :cclose<cr>:lclose<cr>
+autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
+            \   bd|
+            \   q | endif
+
+" Change a color of first line in quickFixLin (for Syntax check line)
+highlight QuickFixLine term=reverse cterm=bold ctermbg=240 gui=undercurl guisp=#ff0000
+
+" For autoresize
+let g:autoresize_width = 80
+let g:autoresize_height = 30
